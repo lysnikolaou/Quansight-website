@@ -6,18 +6,14 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/shared/utils/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/shared/utils"],
       "options": {
-        "jestConfig": "libs/shared/utils/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/shared/utils/jest.config.ts"
       }
     }
   }

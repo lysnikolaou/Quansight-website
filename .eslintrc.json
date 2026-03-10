@@ -75,6 +75,7 @@
         "@typescript-eslint/no-explicit-any": ["error"],
         "@typescript-eslint/explicit-module-boundary-types": ["off"],
         "@typescript-eslint/default-param-last": ["off"],
+        "@typescript-eslint/no-throw-literal": ["off"],
         "no-multiple-empty-lines": "error",
         "import/order": [
           "error",
