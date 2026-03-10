@@ -20,6 +20,10 @@ export default [
   {
     settings: {
       'import/internal-regex': '^@quansight',
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      },
     },
     languageOptions: {
       parserOptions: {

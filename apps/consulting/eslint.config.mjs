@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import js from '@eslint/js';
+import nextConfig from 'eslint-config-next';
 import baseConfig from '../../eslint.config.mjs';
 import globals from 'globals';
 
@@ -12,14 +13,11 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/dist'],
+    ignores: ['**/dist', '**/out-tsc'],
   },
   ...baseConfig,
-  ...compat.extends(
-    'plugin:@nx/react-typescript',
-    'next',
-    'next/core-web-vitals',
-  ),
+  ...compat.extends('plugin:@nx/react-typescript'),
+  ...nextConfig,
   { languageOptions: { globals: { ...globals.jest } } },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -29,7 +27,6 @@ export default [
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
-    // Override or add rules here
     rules: {},
     languageOptions: {
       parserOptions: {
@@ -39,7 +36,6 @@ export default [
   },
   {
     files: ['**/*.js', '**/*.jsx'],
-    // Override or add rules here
     rules: {},
   },
   {
