@@ -14,7 +14,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/dist', '**/out-tsc'],
+    ignores: ['**/dist', '**/out-tsc', '**/.next'],
   },
   { plugins: { '@nx': nxEslintPlugin, '@typescript-eslint': tseslint.plugin } },
   {
