@@ -101,7 +101,12 @@ const nextConfig = {
     svgr: false,
   },
   images: {
-    domains: ['a.storyblok.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'a.storyblok.com',
+      },
+    ],
   },
   async headers() {
     return [

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { AppProps } from 'next/app';
 import Script from 'next/script';
 
@@ -6,7 +8,7 @@ import { Meta } from '@quansight/shared/ui-components';
 import './styles.css';
 import '@code-hike/mdx/dist/index.css';
 
-function CustomApp({ Component, pageProps }: AppProps): JSX.Element {
+function CustomApp({ Component, pageProps }: AppProps): React.ReactNode {
   const consultingDomain = 'quansight.com';
   return (
     <>
@@ -15,11 +17,11 @@ function CustomApp({ Component, pageProps }: AppProps): JSX.Element {
       {typeof window !== 'undefined' &&
         window.location.hostname === consultingDomain && (
           // For more info about this script, see note in consulting/next.config.js
-          (<Script
+          <Script
             data-domain={consultingDomain}
             data-api="/p7e/api/event"
             src="/p7e/js/script.js"
-          />)
+          />
         )}
     </>
   );
