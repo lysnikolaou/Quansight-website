@@ -1,4 +1,6 @@
 {
+  "name": "storyblok-sdk",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/storyblok-sdk/src",
   "projectType": "library",
   "tags": [],
@@ -12,7 +14,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/storyblok-sdk"],
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/storyblok-sdk"],
       "options": {
         "jestConfig": "libs/shared/storyblok-sdk/jest.config.ts",
         "passWithNoTests": true

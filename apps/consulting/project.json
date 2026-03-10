@@ -1,4 +1,6 @@
 {
+  "name": "consulting",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/consulting",
   "projectType": "application",
   "targets": {
@@ -45,7 +47,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/consulting"],
+      "outputs": ["{workspaceRoot}/coverage/apps/consulting"],
       "options": {
         "jestConfig": "apps/consulting/jest.config.ts",
         "passWithNoTests": true
