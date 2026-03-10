@@ -90,7 +90,9 @@
             "pathGroups": [
               {
                 "pattern": "react",
-                "patternOptions": { "matchBase": true },
+                "patternOptions": {
+                  "matchBase": true
+                },
                 "group": "external",
                 "position": "before"
               }
@@ -107,7 +109,10 @@
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     },
     {
       "files": ["*.css", "*.tsx", "*.jsx", ".html"],
