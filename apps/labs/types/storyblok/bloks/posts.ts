@@ -49,4 +49,5 @@ export type TPostsResponse = {
   offset: number;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export type TPostRaw = {};
