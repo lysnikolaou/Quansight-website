@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/next"
+    "defaultCollection": "@nx/next"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -14,7 +14,7 @@
       }
     },
     "no-cloud": {
-      "runner": "@nrwl/workspace/src/tasks-runner/default-tasks-runner",
+      "runner": "@nx/workspace/src/tasks-runner/default-tasks-runner",
       "options": {}
     }
   },
@@ -27,15 +27,15 @@
     ]
   },
   "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nrwl/next": {
+    "@nx/next": {
       "application": {
         "style": "scss",
         "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true
       }
     }
   },
@@ -51,7 +51,8 @@
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/.eslintrc.json"
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
   "targetDefaults": {

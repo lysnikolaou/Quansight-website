@@ -12,15 +12,14 @@ function CustomApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <Meta />
       <Component {...pageProps} />
-
       {typeof window !== 'undefined' &&
         window.location.hostname === consultingDomain && (
           // For more info about this script, see note in consulting/next.config.js
-          <Script
+          (<Script
             data-domain={consultingDomain}
             data-api="/p7e/api/event"
             src="/p7e/js/script.js"
-          />
+          />)
         )}
     </>
   );
