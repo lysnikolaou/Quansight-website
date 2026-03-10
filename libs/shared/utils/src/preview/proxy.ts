@@ -37,7 +37,7 @@ export function enterPreview(request: NextRequest): NextResponse | void {
   }
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (fromStoryblok(request)) {
     return enterPreview(request);
   }

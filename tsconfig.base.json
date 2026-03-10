@@ -23,8 +23,8 @@
         "libs/shared/ui-components/src/index.ts"
       ],
       "@quansight/shared/utils": ["libs/shared/utils/src/index.ts"],
-      "@quansight/shared/utils/preview/middleware": [
-        "libs/shared/utils/src/preview/middleware.ts"
+      "@quansight/shared/utils/preview/proxy": [
+        "libs/shared/utils/src/preview/proxy.ts"
       ]
     }
   },
