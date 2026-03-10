@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'shared-ui-components',
+/* eslint-disable */
+export default {
+  displayName: 'shared-types',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/shared/ui-components',
+  coverageDirectory: '../../../coverage/libs/shared/types',
 };

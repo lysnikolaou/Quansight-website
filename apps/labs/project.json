@@ -1,5 +1,4 @@
 {
-  "root": "apps/labs",
   "sourceRoot": "apps/labs",
   "projectType": "application",
   "targets": {
@@ -12,7 +11,10 @@
         "outputPath": "dist/apps/labs"
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "development": {
+          "outputPath": "apps/labs"
+        }
       }
     },
     "serve": {
@@ -27,8 +29,13 @@
         "production": {
           "buildTarget": "labs:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "labs:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -40,7 +47,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/labs"],
       "options": {
-        "jestConfig": "apps/labs/jest.config.js",
+        "jestConfig": "apps/labs/jest.config.ts",
         "passWithNoTests": true
       }
     },

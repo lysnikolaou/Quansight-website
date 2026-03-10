@@ -1,5 +1,4 @@
 {
-  "root": "libs/shared/storyblok-sdk",
   "sourceRoot": "libs/shared/storyblok-sdk/src",
   "projectType": "library",
   "tags": [],
@@ -15,7 +14,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/storyblok-sdk"],
       "options": {
-        "jestConfig": "libs/shared/storyblok-sdk/jest.config.js",
+        "jestConfig": "libs/shared/storyblok-sdk/jest.config.ts",
         "passWithNoTests": true
       }
     }
