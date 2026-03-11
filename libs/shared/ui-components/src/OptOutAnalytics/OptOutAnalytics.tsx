@@ -1,25 +1,28 @@
 import { FC, useEffect, useState } from 'react';
 
-import { Button } from '../Button/Button';
 import { TOptOutAnalyticsProps } from './types';
+import { Button } from '../Button/Button';
 
 export const OptOutAnalytics: FC<TOptOutAnalyticsProps> = (props) => {
   const { domain } = props;
   const [isLoading, setIsLoading] = useState(true);
   const [isUserOptedOut, setIsUserOptedOut] = useState(false);
-  useEffect(() => {
-    // When page loads, opt user out automatically - i.e., one-click opt-out.
-    optOut();
-    setIsLoading(false);
-  }, []);
 
   const optOut = () => {
-    localStorage.plausible_ignore = true;
+    localStorage['plausible_ignore'] = true;
     setIsUserOptedOut(true);
   };
 
+  useEffect(() => {
+    // When page loads, opt user out automatically - i.e., one-click opt-out.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    optOut();
+     
+    setIsLoading(false);
+  }, []);
+
   const optIn = () => {
-    delete localStorage.plausible_ignore;
+    delete localStorage['plausible_ignore'];
     setIsUserOptedOut(false);
   };
 

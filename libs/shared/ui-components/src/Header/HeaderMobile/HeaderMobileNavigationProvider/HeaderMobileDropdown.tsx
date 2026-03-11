@@ -15,6 +15,7 @@ export const HeaderMobileDropdown: FC<THeaderMobileDropdownProps> = ({
   const [isNavbarItemOpen, setIsNavbarItemOpen] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsNavbarItemOpen(false);
   }, [isNavigationOpen]);
 
@@ -23,7 +24,7 @@ export const HeaderMobileDropdown: FC<THeaderMobileDropdownProps> = ({
       <button
         aria-expanded={isNavbarItemOpen ? 'true' : 'false'}
         aria-controls="options"
-        className="flex justify-start items-center py-[1.6rem] px-[2rem] w-full text-[1.7rem] font-extrabold leading-[2.825rem] text-left capitalize font-heading"
+        className="font-heading flex w-full items-center justify-start px-8 py-[1.6rem] text-left text-[1.7rem] font-extrabold capitalize leading-[2.825rem]"
         onClick={() => setIsNavbarItemOpen(!isNavbarItemOpen)}
       >
         {buttonText}
@@ -31,7 +32,7 @@ export const HeaderMobileDropdown: FC<THeaderMobileDropdownProps> = ({
           aria-hidden="true"
           className={clsx(
             isNavbarItemOpen && '-rotate-180',
-            'inline-block ml-4 w-0 h-0 border-x-[0.7rem] border-t-[.7rem] border-x-transparent transition-transform motion-reduce:transition-none duration-500 ease-in-out border-y-solid border-l-solid',
+            'border-y-solid border-l-solid ml-4 inline-block size-0 border-x-[0.7rem] border-t-[.7rem] border-x-transparent transition-transform duration-500 ease-in-out motion-reduce:transition-none',
           )}
         />
       </button>

@@ -19,9 +19,13 @@ export const useDeviceSize = (): string => {
   const isDesktop = useMediaQuery(desktopSizeQuery);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentionally deferred to avoid SSR hydration mismatch
     if (isMobile) setDeviceSize(DeviceSizeVariant.Mobile);
+     
     if (isTablet) setDeviceSize(DeviceSizeVariant.Tablet);
+     
     if (isTabletLarge) setDeviceSize(DeviceSizeVariant.TabletLarge);
+     
     if (isDesktop) setDeviceSize(DeviceSizeVariant.Desktop);
   }, [isDesktop, isTabletLarge, isTablet, isMobile]);
 

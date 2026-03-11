@@ -90,10 +90,11 @@ export const useStoryblok = <PageItem>(
     if (preview) {
       addBridge(initEventListeners);
     }
-  }); // eslint-disable-line react-hooks/exhaustive-deps -- TODO
+  });  
 
   useEffect(() => {
     if (!preview) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setStory(originalStory);
     }
   }, [originalStory, preview]);
