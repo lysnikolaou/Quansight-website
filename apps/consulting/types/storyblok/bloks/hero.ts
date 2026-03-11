@@ -1,4 +1,4 @@
-import { ImageProps } from "next/legacy/image";
+import { CSSProperties } from 'react';
 
 import { TImage, TBlok } from '@quansight/shared/types';
 import {
@@ -14,12 +14,12 @@ export type THeroRawData = {
   variant: HeroVariant;
   subTitle?: string;
   component: ComponentType.Hero;
-  objectFit?: ImageProps['objectFit'];
+  objectFit?: CSSProperties['objectFit'];
   backgroundColor?: HeroBackgroundVariant;
   imageMobile?: TImage;
-  objectFitMobile?: ImageProps['objectFit'];
+  objectFitMobile?: CSSProperties['objectFit'];
   imageTablet?: TImage;
-  objectFitTablet?: ImageProps['objectFit'];
+  objectFitTablet?: CSSProperties['objectFit'];
   imageDesktop?: TImage;
-  objectFitDesktop?: ImageProps['objectFit'];
+  objectFitDesktop?: CSSProperties['objectFit'];
 } & TBlok;

@@ -11,15 +11,22 @@ export type TTeamMemberImage = {
 };
 
 export const TeamMemberImage: FC<TTeamMemberImage> = ({ image, shape }) => (
-  <div className="inline-flex relative mb-[0.5rem] md:mb-[1rem]">
-    <Picture
-      className="brightness-110 grayscale"
-      imageSrc={image.filename}
-      imageAlt={image.alt ? image.alt : ''}
-      width={200}
-      height={shape === TeamShape.Square ? 200 : 280}
-      objectFit="cover"
-    />
-    <span className="absolute top-0 left-0 w-full h-full opacity-25 z-2 bg-violet" />
+  <div className="relative mb-2 inline-flex md:mb-4">
+    <div
+      style={{
+        position: 'relative',
+        width: 200,
+        height: shape === TeamShape.Square ? 200 : 280,
+      }}
+    >
+      <Picture
+        className="brightness-110 grayscale"
+        imageSrc={image.filename}
+        imageAlt={image.alt ? image.alt : ''}
+        layout="fill"
+        objectFit="cover"
+      />
+    </div>
+    <span className="z-2 bg-violet absolute left-0 top-0 size-full opacity-25" />
   </div>
 );

@@ -1,4 +1,4 @@
-import { ImageProps } from "next/legacy/image";
+import { CSSProperties } from 'react';
 
 export enum HeroVariant {
   Small = 'small',
@@ -16,7 +16,7 @@ export enum HeroBackgroundVariant {
 export type TCustomImage = {
   imageSrc: string;
   imageAlt: string;
-  objectFit: ImageProps['objectFit'];
+  objectFit?: CSSProperties['objectFit'];
 };
 
 export type TResponsiveImages = {
@@ -32,7 +32,7 @@ export type THeroProps = {
   imageSrc?: string;
   imageAlt?: string;
   backgroundColor?: string;
-  objectFit?: ImageProps['objectFit'];
+  objectFit?: CSSProperties['objectFit'];
   imageMobile?: TCustomImage;
   imageTablet?: TCustomImage;
   imageDesktop?: TCustomImage;

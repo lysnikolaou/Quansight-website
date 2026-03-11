@@ -1,14 +1,14 @@
-import { ImageProps } from "next/legacy/image";
+import { CSSProperties } from 'react';
 
 export type TPictureProps = {
   imageSrc: string;
   imageAlt: string;
-  width?: ImageProps['width'];
-  height?: ImageProps['height'];
-  layout?: ImageProps['layout'];
-  objectFit?: ImageProps['objectFit'];
-  objectPosition?: ImageProps['objectPosition'];
-  priority?: ImageProps['priority'];
-  onLoadingComplete?: ImageProps['onLoadingComplete'];
+  width?: number;
+  height?: number;
+  layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive';
+  objectFit?: CSSProperties['objectFit'];
+  objectPosition?: CSSProperties['objectPosition'];
+  priority?: boolean;
+  onLoadingComplete?: (img: HTMLImageElement) => void;
   className?: string;
 };
