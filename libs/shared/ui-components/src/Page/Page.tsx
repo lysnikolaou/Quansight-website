@@ -1,6 +1,5 @@
+import { storyblokEditable } from '@storyblok/react';
 import { FC, ReactNode } from 'react';
-
-import SbEditable from 'storyblok-react';
 
 import { TBlok } from '@quansight/shared/types';
 
@@ -8,12 +7,6 @@ export type TPageProps = {
   data: { content: { body?: TBlok[] } };
   children: (blok: unknown) => ReactNode;
 };
-
-// storyblok-react types lack React 18 children support
-const StoryblokEditable = SbEditable as unknown as FC<{
-  content: TBlok;
-  children: ReactNode;
-}>;
 
 export const Page: FC<TPageProps> = ({ data, children }) => {
   if (!data?.content?.body) {
@@ -23,9 +16,9 @@ export const Page: FC<TPageProps> = ({ data, children }) => {
   return (
     <>
       {data.content.body.map((blok: TBlok) => (
-        <StoryblokEditable content={blok} key={blok._uid}>
+        <div key={blok._uid} {...storyblokEditable(blok)}>
           {children(blok)}
-        </StoryblokEditable>
+        </div>
       ))}
     </>
   );
